@@ -12,7 +12,7 @@ import {
   FiCheckCircle,
   FiAward,
   FiPackage,
-  FiImage,
+  
 } from 'react-icons/fi';
 import './Home.css';
 import adBlueImage from '../../assets/images/Group-Shot.png';
