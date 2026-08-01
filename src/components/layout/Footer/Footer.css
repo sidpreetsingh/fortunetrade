@@ -1,0 +1,235 @@
+/* src/components/layout/Footer/Footer.css */
+
+:root {
+  --footer-bg-dark: #0f172a;
+  --footer-bg-card: #1e293b;
+  --footer-text-light: #f8fafc;
+  --footer-text-muted: #94a3b8;
+  --footer-border: #334155;
+  --footer-accent-cyan: #0284c7;
+  --footer-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.footer {
+  background-color: var(--footer-bg-dark);
+  color: var(--footer-text-light);
+  font-family: var(--footer-font);
+}
+
+.footer__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==================================================
+   MAIN FOOTER GRID
+================================================== */
+.footer__main {
+  padding: 64px 0 48px 0;
+  border-bottom: 1px solid var(--footer-border);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.footer__col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Brand Column */
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.footer__logo-icon {
+  background-color: var(--footer-accent-cyan);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  letter-spacing: -0.5px;
+}
+
+.footer__logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__logo-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.footer__logo-sub {
+  font-size: 0.75rem;
+  color: var(--footer-text-muted);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.footer__brand-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--footer-text-muted);
+  margin: 0 0 24px 0;
+  max-width: 380px;
+}
+
+.footer__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--footer-bg-card);
+  border: 1px solid var(--footer-border);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #38bdf8;
+  width: fit-content;
+}
+
+.footer__badge-icon {
+  font-size: 1rem;
+}
+
+/* Section Headings */
+.footer__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.2px;
+}
+
+/* Navigation Links */
+.footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer__links a {
+  color: var(--footer-text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer__links a:hover {
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+/* Contact List */
+.footer__contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer__contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: var(--footer-text-muted);
+}
+
+.footer__contact-icon {
+  color: var(--footer-accent-cyan);
+  font-size: 1.1rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.footer__contact-item a {
+  color: var(--footer-text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer__contact-item a:hover {
+  color: #ffffff;
+}
+
+/* ==================================================
+   BOTTOM COPYRIGHT BAR
+================================================== */
+.footer__bottom {
+  padding: 24px 0;
+  background-color: #0b1329;
+}
+
+.footer__bottom-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__copyright {
+  font-size: 0.85rem;
+  color: var(--footer-text-muted);
+  margin: 0;
+}
+
+.footer__copyright strong {
+  color: var(--footer-text-light);
+}
+
+.footer__legal {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer__legal a {
+  color: var(--footer-text-muted);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer__legal a:hover {
+  color: #ffffff;
+}
+
+.footer__divider {
+  color: var(--footer-border);
+  font-size: 0.85rem;
+}
+
+/* ==================================================
+   RESPONSIVE BREAKPOINTS
+================================================== */
+
+@media (min-width: 640px) {
+  .footer__bottom-container {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer__grid {
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+    gap: 48px;
+  }
+}

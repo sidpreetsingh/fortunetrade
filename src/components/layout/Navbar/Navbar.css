@@ -1,0 +1,320 @@
+/* src/components/layout/Navbar/Navbar.css */
+
+:root {
+  --nav-height: 88px;
+  --nav-height-scrolled: 72px;
+  
+  --color-primary: #0056b3;
+  --color-primary-hover: #004494;
+  --color-text-dark: #1a1a1a;
+  --color-text-light: #4a4a4a;
+  --color-border: #eaeaea;
+  
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-primary: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ==================================================
+   NAVBAR BASE
+================================================== */
+.navbar {
+  position: relative;
+  z-index: 100;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.navbar__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 12px 24px; /* Gives room for the larger logo */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100px;  /* Raised min-height to support the bigger logo */
+}
+
+.navbar--scrolled {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.navbar--scrolled .navbar__container {
+  min-height: 76px;
+  padding: 8px 24px;
+}
+
+
+
+/* ==================================================
+   LOGO
+================================================== */
+
+
+.navbar__logo span {
+  color: var(--color-primary);
+}
+
+/* ==================================================
+   DESKTOP NAVIGATION (Hidden on mobile)
+================================================== */
+.navbar__desktop-nav {
+  display: none;
+}
+
+.navbar__nav-list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+  text-decoration: none;
+  position: relative;
+  padding: 8px 0;
+  transition: color var(--transition-fast);
+}
+
+.navbar__nav-link:hover,
+.navbar__nav-link--active {
+  color: var(--color-primary);
+}
+
+/* Animated Underline */
+.navbar__nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width var(--transition-fast);
+}
+
+.navbar__nav-link:hover::after,
+.navbar__nav-link--active::after {
+  width: 100%;
+}
+
+/* ==================================================
+   BUTTONS
+================================================== */
+.navbar__desktop-cta {
+  display: none;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-primary--large {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.125rem;
+}
+
+/* ==================================================
+   MOBILE HAMBURGER TOGGLE
+================================================== */
+.navbar__mobile-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--color-text-dark);
+  cursor: pointer;
+  padding: 8px;
+  margin-right: -8px; /* Offset padding for perfect alignment */
+  transition: color var(--transition-fast);
+}
+
+.navbar__mobile-toggle:hover {
+  color: var(--color-primary);
+}
+
+/* ==================================================
+   DRAWER OVERLAY
+================================================== */
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 90;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-smooth);
+}
+
+.drawer-overlay--open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ==================================================
+   MOBILE DRAWER
+================================================== */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 85vw;
+  max-width: 320px;
+  height: 100vh;
+  background-color: #ffffff;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform var(--transition-smooth);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-primary);
+}
+
+.drawer--open {
+  transform: translateX(0);
+}
+
+.drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.drawer__close-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-dark);
+  cursor: pointer;
+  padding: 8px;
+  margin-right: -8px;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.drawer__close-btn:hover {
+  color: var(--color-primary);
+  transform: rotate(90deg);
+}
+
+.drawer__nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: 32px 24px;
+}
+
+.drawer__nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.drawer__nav-link {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-text-dark);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.drawer__nav-link:hover,
+.drawer__nav-link--active {
+  color: var(--color-primary);
+}
+
+.drawer__footer {
+  padding: 24px;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ==================================================
+   MEDIA QUERIES
+================================================== */
+
+/* Desktop Breakpoint */
+@media (min-width: 1024px) {
+  .navbar__desktop-nav {
+    display: block;
+  }
+  
+  .navbar__desktop-cta {
+    display: block;
+  }
+  
+  .navbar__mobile-toggle {
+    display: none;
+  }
+
+  /* Ensure drawer and overlay are strictly hidden on desktop */
+  .drawer,
+  .drawer-overlay {
+    display: none;
+  }
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 4px 0;
+}
+
+.navbar__logo-img {
+  height: 90px;          /* Increased dramatically from 64px -> 90px */
+  width: auto;           /* Maintains crisp aspect ratio */
+  max-width: 380px;      /* Prevents clipping for wider horizontal logos */
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.08)); /* Adds subtle depth */
+  transition: height 0.3s ease, filter 0.3s ease;
+}
+
+/* Scaled-up Logo inside Mobile Drawer */
+.drawer__header .navbar__logo-img {
+  height: 72px;
+  max-width: 260px;
+}
+
+/* Clean scale-down when scrolling */
+.navbar--scrolled .navbar__logo-img {
+  height: 64px;          /* Slightly adjusts on scroll for a compact header */
+}
+
+/* Mobile Screens Adjustments */
+@media (max-width: 640px) {
+  .navbar__logo-img {
+    height: 52px;        /* Prevents header overflow on small phones */
+  }
+}

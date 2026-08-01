@@ -1,0 +1,369 @@
+/* src/components/home/Hero/Hero.css */
+
+:root {
+  --hero-text: #ffffff;
+  --hero-muted: #cbd5e1;
+  --hero-accent-cyan: #38bdf8;
+  --hero-btn-blue: #0056b3;
+  --hero-btn-blue-hover: #004494;
+  --hero-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  font-family: var(--hero-font);
+  color: var(--hero-text);
+  overflow: hidden;
+
+  /* Background Image */
+  background: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=2000&q=85') center/cover no-repeat;
+}
+
+/* Top Boundary Separator Line */
+.hero__top-separator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg, 
+    transparent 0%, 
+    rgba(56, 189, 248, 0.6) 50%, 
+    transparent 100%
+  );
+  z-index: 3;
+}
+
+/* Gradient Overlay */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.98) 0%,
+    rgba(15, 23, 42, 0.88) 50%,
+    rgba(15, 23, 42, 0.95) 100%
+  );
+  z-index: 1;
+}
+
+.hero__container {
+  position: relative;
+  z-index: 2;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 56px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+/* ==================================================
+   SPLIT GRID LAYOUT
+================================================== */
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* ==================================================
+   LEFT COLUMN: ENLARGED LOGO CARD
+================================================== */
+.hero__logo-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.hero__logo-card {
+  background-color: #ffffff;
+  padding: 36px 40px;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero__logo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(56, 189, 248, 0.4);
+}
+
+.hero__logo-large {
+  width: 100%;
+  height: auto;
+  max-height: 240px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ==================================================
+   RIGHT COLUMN: HERO CONTENT
+================================================== */
+.hero__content-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Company Header */
+.hero__company-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.hero__company-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.hero__company-name {
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  margin: 0;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 60%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
+}
+
+.hero__company-line {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #38bdf8, transparent);
+  border-radius: 2px;
+  margin-top: 4px;
+}
+
+/* Frosted Pill Badge */
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--hero-accent-cyan);
+  margin-bottom: 20px;
+  width: fit-content;
+}
+
+.hero__badge-icon {
+  font-size: 1.1rem;
+}
+
+/* Headline */
+.hero__title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.8px;
+  margin: 0 0 18px 0;
+  color: #ffffff;
+}
+
+.hero__title-highlight {
+  background: linear-gradient(135deg, #38bdf8 0%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero__description {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--hero-muted);
+  margin: 0 0 32px 0;
+  max-width: 680px;
+}
+
+/* Action CTAs */
+.hero__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--hero-btn-blue);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 86, 179, 0.4);
+  transition: all 0.25s ease;
+}
+
+.btn-hero-primary:hover {
+  background-color: var(--hero-btn-blue-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 86, 179, 0.5);
+}
+
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+
+.btn-hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ==================================================
+   TRUST STRIP
+================================================== */
+.hero__trust-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 24px 32px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.hero__trust-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero__trust-icon {
+  color: var(--hero-accent-cyan);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.hero__trust-item strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+.hero__trust-item span {
+  font-size: 0.85rem;
+  color: var(--hero-muted);
+}
+
+.hero__trust-divider {
+  display: none;
+  width: 1px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ==================================================
+   RESPONSIVE BREAKPOINTS
+================================================== */
+@media (min-width: 640px) {
+  .hero__actions {
+    flex-direction: row;
+  }
+  
+  .hero__company-name {
+    font-size: 1.85rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    min-height: 90vh;
+  }
+
+  /* Two-Column Side-by-Side Split on Desktop */
+  .hero__grid {
+    grid-template-columns: 42% 58%;
+    gap: 48px;
+  }
+
+  .hero__logo-large {
+    max-height: 280px;
+  }
+
+  .hero__title {
+    font-size: 3rem;
+  }
+
+  .hero__trust-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hero__trust-divider {
+    display: block;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero__grid {
+    grid-template-columns: 45% 55%;
+    gap: 60px;
+  }
+
+  .hero__company-name {
+    font-size: 2.25rem;
+  }
+
+  .hero__title {
+    font-size: 3.5rem;
+  }
+
+  .hero__logo-large {
+    max-height: 320px;
+  }
+}

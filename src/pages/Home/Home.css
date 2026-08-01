@@ -1,0 +1,403 @@
+/* src/pages/Home/Home.css */
+
+:root {
+  --home-bg: #f8fafc;
+  --home-card-bg: #ffffff;
+  --home-text-dark: #0f172a;
+  --home-text-muted: #475569;
+  --home-primary: #0056b3;
+  --home-primary-hover: #004494;
+  --home-cyan: #0284c7;
+  --home-border: #e2e8f0;
+  --home-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.home-page {
+  font-family: var(--home-font);
+  background-color: var(--home-bg);
+  color: var(--home-text-dark);
+}
+
+/* ==================================================
+   FEATURED ADBLUE SECTION
+================================================== */
+.home-adblue {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.home-adblue__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Image Column Styling */
+.home-adblue__image-col {
+  width: 100%;
+}
+
+.home-adblue__image-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+  background-color: #e2e8f0;
+  aspect-ratio: 4 / 3;
+}
+
+.home-adblue__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.home-adblue__image-wrapper:hover .home-adblue__image {
+  transform: scale(1.03);
+}
+
+.home-adblue__image-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #38bdf8;
+  padding: 10px 18px;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Content Column Styling */
+.home-adblue__content-col {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-adblue__subtitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--home-cyan);
+  background-color: #e0f2fe;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.home-adblue__title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--home-text-dark);
+  margin: 0 0 16px 0;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.home-adblue__description {
+  font-size: 1.125rem;
+  color: var(--home-text-muted);
+  line-height: 1.6;
+  margin: 0 0 32px 0;
+}
+
+/* Specs List */
+.home-adblue__specs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.home-adblue__spec-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.home-adblue__spec-icon {
+  color: #16a34a;
+  font-size: 1.35rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.home-adblue__spec-item strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--home-text-dark);
+  margin-bottom: 2px;
+}
+
+.home-adblue__spec-item p {
+  font-size: 0.925rem;
+  color: var(--home-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Actions */
+.home-adblue__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.btn-adblue-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--home-primary);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 16px 28px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 86, 179, 0.2);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-adblue-primary:hover {
+  background-color: var(--home-primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn-adblue-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: var(--home-text-dark);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 16px 28px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-adblue-secondary:hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+/* ==================================================
+   PILLARS SECTION (WHY CHOOSE US)
+================================================== */
+.home-pillars {
+  padding: 80px 0;
+  background-color: #f8fafc;
+  border-top: 1px solid var(--home-border);
+}
+
+.home-pillars__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.home-pillars__header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px auto;
+}
+
+.home-pillars__subtitle {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--home-primary);
+  margin-bottom: 12px;
+}
+
+.home-pillars__title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--home-text-dark);
+  margin: 0 0 16px 0;
+  letter-spacing: -0.5px;
+}
+
+.home-pillars__description {
+  font-size: 1.125rem;
+  color: var(--home-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.home-pillars__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.home-pillar-card {
+  background-color: #ffffff;
+  border: 1px solid var(--home-border);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-pillar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+.home-pillar-card__icon {
+  width: 48px;
+  height: 48px;
+  background-color: #eff6ff;
+  color: var(--home-primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.home-pillar-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--home-text-dark);
+  margin: 0 0 12px 0;
+}
+
+.home-pillar-card p {
+  font-size: 0.95rem;
+  color: var(--home-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==================================================
+   CTA BANNER SECTION
+================================================== */
+.home-cta {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
+  color: #ffffff;
+}
+
+.home-cta__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.home-cta__content {
+  max-width: 700px;
+}
+
+.home-cta__title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+}
+
+.home-cta__text {
+  font-size: 1.125rem;
+  color: #dbeafe;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.home-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  color: var(--home-primary);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.home-cta__btn:hover {
+  background-color: #f8fafc;
+  transform: translateY(-2px);
+}
+
+/* ==================================================
+   RESPONSIVE BREAKPOINTS
+================================================== */
+
+@media (min-width: 640px) {
+  .home-adblue__actions {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .home-pillars__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-adblue,
+  .home-pillars {
+    padding: 100px 0;
+  }
+
+  .home-adblue__container {
+    flex-direction: row;
+    gap: 64px;
+  }
+
+  .home-adblue__image-col,
+  .home-adblue__content-col {
+    flex: 1;
+  }
+
+  .home-adblue__title,
+  .home-pillars__title,
+  .home-cta__title {
+    font-size: 2.75rem;
+  }
+
+  .home-pillars__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .home-cta__container {
+    flex-direction: row;
+    align-items: center;
+  }
+}
