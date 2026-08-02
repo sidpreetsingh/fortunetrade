@@ -41,42 +41,63 @@
   flex-direction: column;
 }
 
-/* Brand Column */
+/* ==================================================
+   BRAND LOGO & BADGE (Separated image badge & text)
+================================================== */
 .footer__logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   text-decoration: none;
   margin-bottom: 20px;
+  width: fit-content;
 }
 
-.footer__logo-icon {
-  background-color: var(--footer-accent-cyan);
-  color: #ffffff;
-  font-weight: 800;
-  font-size: 1.1rem;
+/* Small, fitted white box for the logo image icon only */
+.footer__logo-badge {
+  background: #ffffff;
   padding: 8px 12px;
-  border-radius: 8px;
-  letter-spacing: -0.5px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.footer__logo:hover .footer__logo-badge {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.footer__logo-img {
+  height: 42px;          /* Perfectly scaled icon height */
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Text styling sitting directly on dark footer background */
 .footer__logo-text {
   display: flex;
   flex-direction: column;
 }
 
 .footer__logo-name {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 800;
   color: #ffffff;
-  line-height: 1.1;
+  line-height: 1.15;
+  letter-spacing: -0.2px;
 }
 
 .footer__logo-sub {
   font-size: 0.75rem;
-  color: var(--footer-text-muted);
+  color: #38bdf8;        /* Sky blue accent for modern brand look */
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
 }
 
 .footer__brand-desc {
@@ -105,7 +126,9 @@
   font-size: 1rem;
 }
 
-/* Section Headings */
+/* ==================================================
+   SECTION HEADINGS
+================================================== */
 .footer__title {
   font-size: 1.05rem;
   font-weight: 700;
@@ -114,7 +137,9 @@
   letter-spacing: -0.2px;
 }
 
-/* Navigation Links */
+/* ==================================================
+   NAVIGATION LINKS
+================================================== */
 .footer__links {
   list-style: none;
   padding: 0;
@@ -137,7 +162,9 @@
   transform: translateX(3px);
 }
 
-/* Contact List */
+/* ==================================================
+   CONTACT LIST
+================================================== */
 .footer__contact-list {
   display: flex;
   flex-direction: column;

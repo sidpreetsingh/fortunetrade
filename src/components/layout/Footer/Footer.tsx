@@ -2,7 +2,6 @@
 import React from 'react';
 import { Link } from 'react-router';
 import {
-  
   FiMail,
   FiPhone,
   FiMapPin,
@@ -10,6 +9,7 @@ import {
   FiClock,
 } from 'react-icons/fi';
 import './Footer.css';
+import brandLogo from "../../../assets/icons/ChatGPT Image May 30, 2026, 01_29_56 PM (1).png";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -22,7 +22,16 @@ export const Footer: React.FC = () => {
           {/* Column 1: Brand & Identity */}
           <div className="footer__col footer__col--brand">
             <Link to="/" className="footer__logo">
-              <span className="footer__logo-icon">MR</span>
+              {/* Separate compact white container for logo icon */}
+              <div className="footer__logo-badge">
+                <img
+                  src={brandLogo}
+                  alt="MR Fortune Trade Pvt. Ltd."
+                  className="footer__logo-img"
+                />
+              </div>
+              
+              {/* Brand name styled cleanly on dark background */}
               <div className="footer__logo-text">
                 <span className="footer__logo-name">MR Fortune Trade</span>
                 <span className="footer__logo-sub">Pvt. Ltd.</span>
@@ -71,8 +80,6 @@ export const Footer: React.FC = () => {
                 <a href="tel:+919335962923">+91-9335962923</a>
                 <a href="tel:+96877074686">+968-77074686</a>
               </div>
-
-              
 
               <div className="footer__contact-item">
                 <FiClock className="footer__contact-icon" />
