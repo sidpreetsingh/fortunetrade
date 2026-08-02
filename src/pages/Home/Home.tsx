@@ -100,7 +100,11 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Why Choose Us Section - The 4 Pillars */}
+      {/* Why Choose Us Section - The 4 Pillars */}
       <section className="home-pillars">
+        {/* Dark Overlay to tone down the image and protect readability */}
+        <div className="home-pillars__overlay" />
+
         <div className="home-pillars__container">
           <div className="home-pillars__header">
             <span className="home-pillars__subtitle">Why Choose MR Fortune Trade</span>

@@ -46,15 +46,39 @@
   padding: 8px 24px;
 }
 
-
-
 /* ==================================================
-   LOGO
+   LOGO STYLES
 ================================================== */
-
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 4px 0;
+}
 
 .navbar__logo span {
   color: var(--color-primary);
+}
+
+.navbar__logo-img {
+  height: 90px;          /* Large Desktop Logo Height */
+  width: auto;           /* Maintains aspect ratio */
+  max-width: 380px;      /* Prevents clipping */
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.08));
+  transition: height 0.3s ease, filter 0.3s ease;
+}
+
+/* Scaled-down logo inside Mobile Drawer Header */
+.drawer__header .navbar__logo-img {
+  height: 72px;
+  max-width: 260px;
+}
+
+/* Clean scale-down when scrolling */
+.navbar--scrolled .navbar__logo-img {
+  height: 64px;
 }
 
 /* ==================================================
@@ -160,7 +184,7 @@
 }
 
 /* ==================================================
-   DRAWER OVERLAY
+   DRAWER OVERLAY (Backdrop constraint added)
 ================================================== */
 .drawer-overlay {
   position: fixed;
@@ -170,6 +194,9 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--transition-smooth);
+  
+  /* Prevents dragging backdrop overlay from triggering body scroll */
+  touch-action: none;
 }
 
 .drawer-overlay--open {
@@ -178,7 +205,7 @@
 }
 
 /* ==================================================
-   MOBILE DRAWER
+   MOBILE DRAWER (Containment constraints added)
 ================================================== */
 .drawer {
   position: fixed;
@@ -196,6 +223,10 @@
   transition: transform var(--transition-smooth);
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
   font-family: var(--font-primary);
+  
+  /* Prevents scroll chaining to body when drawer edges are reached */
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .drawer--open {
@@ -229,6 +260,9 @@
   flex: 1;
   overflow-y: auto;
   padding: 32px 24px;
+  
+  /* Keeps scroll boundaries locked inside navigation links container */
+  overscroll-behavior: contain;
 }
 
 .drawer__nav-list {
@@ -263,6 +297,13 @@
    MEDIA QUERIES
 ================================================== */
 
+/* Mobile Screens Adjustments */
+@media (max-width: 640px) {
+  .navbar__logo-img {
+    height: 52px; /* Prevents header overflow on small phones */
+  }
+}
+
 /* Desktop Breakpoint */
 @media (min-width: 1024px) {
   .navbar__desktop-nav {
@@ -281,40 +322,5 @@
   .drawer,
   .drawer-overlay {
     display: none;
-  }
-}
-
-.navbar__logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  padding: 4px 0;
-}
-
-.navbar__logo-img {
-  height: 90px;          /* Increased dramatically from 64px -> 90px */
-  width: auto;           /* Maintains crisp aspect ratio */
-  max-width: 380px;      /* Prevents clipping for wider horizontal logos */
-  object-fit: contain;
-  display: block;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.08)); /* Adds subtle depth */
-  transition: height 0.3s ease, filter 0.3s ease;
-}
-
-/* Scaled-up Logo inside Mobile Drawer */
-.drawer__header .navbar__logo-img {
-  height: 72px;
-  max-width: 260px;
-}
-
-/* Clean scale-down when scrolling */
-.navbar--scrolled .navbar__logo-img {
-  height: 64px;          /* Slightly adjusts on scroll for a compact header */
-}
-
-/* Mobile Screens Adjustments */
-@media (max-width: 640px) {
-  .navbar__logo-img {
-    height: 52px;        /* Prevents header overflow on small phones */
   }
 }

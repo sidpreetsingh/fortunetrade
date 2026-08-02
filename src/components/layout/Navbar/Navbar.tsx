@@ -70,15 +70,20 @@ export function Navbar() {
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
+      // Optional: Prevent layout jitter on desktop if scrollbars hide
+      document.body.style.touchAction = 'none'; 
     } else {
       document.body.style.overflow = '';
+      document.body.style.touchAction = '';
     }
 
+    // Cleanup when component unmounts
     return () => {
       document.body.style.overflow = '';
+      document.body.style.touchAction = '';
     };
   }, [isMenuOpen]);
-
+  
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import {
-  FiGlobe,
+  
   FiMail,
   FiPhone,
   FiMapPin,
@@ -58,23 +58,21 @@ export const Footer: React.FC = () => {
             <div className="footer__contact-list">
               <div className="footer__contact-item">
                 <FiMapPin className="footer__contact-icon" />
-                <span>MR Fortune Trade Pvt. Ltd., India</span>
+                <span>84/1 Curzon Road, HNS Shastri Nagar, Kanpur, Uttar Pradesh, India - 208005</span>
               </div>
 
               <div className="footer__contact-item">
                 <FiMail className="footer__contact-icon" />
-                <a href="mailto:exports@mrfortunetrade.com">exports@mrfortunetrade.com</a>
+                <a href="mailto:sridhar@mrfortunetrade.com">sridhar@mrfortunetrade.com</a>
               </div>
 
               <div className="footer__contact-item">
                 <FiPhone className="footer__contact-icon" />
-                <a href="tel:+910000000000">+91 (0) 000 000 0000</a>
+                <a href="tel:+919335962923">+91-9335962923</a>
+                <a href="tel:+96877074686">+968-77074686</a>
               </div>
 
-              <div className="footer__contact-item">
-                <FiGlobe className="footer__contact-icon" />
-                <span>Middle East & Global Shipments</span>
-              </div>
+              
 
               <div className="footer__contact-item">
                 <FiClock className="footer__contact-icon" />
