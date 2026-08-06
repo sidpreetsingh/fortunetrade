@@ -136,7 +136,7 @@ export default function WhyChooseUs() {
                 Trusted by international businesses seeking reliable AdBlue® (DEF) supply chains engineered on chemical purity, ISO certification, and logistics excellence.
               </p>
               <div className="wcu-hero__actions">
-                <Link to="/quote" className="btn-primary glow-btn">
+                <Link to="/contact" className="btn-primary glow-btn">
                   Request a Quote <FiArrowRight className="btn-icon" />
                 </Link>
               </div>
@@ -236,7 +236,7 @@ export default function WhyChooseUs() {
               MR Fortune Trade delivers premium AdBlue® backed by consistent quality and dependable export services.
             </p>
             <div className="cta-actions">
-              <Link to="/quote" className="btn-primary glow-btn">Request a Quote</Link>
+              <Link to="/contact" className="btn-primary glow-btn">Request a Quote</Link>
               <Link to="/contact" className="btn-secondary">Contact Us</Link>
             </div>
           </div>
