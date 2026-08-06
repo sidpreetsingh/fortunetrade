@@ -218,10 +218,8 @@ export const GetQuote: React.FC = () => {
           </div>
 
           <div className="gq-map-details">
-            <div className="gq-map-tag">
-              <span className="gq-dot-live" /> Google Maps Integration
-            </div>
-            <h3>Strategic HQ Location</h3>
+            
+            <h3>HQ Location</h3>
             <p>Serving clients seamlessly across India and major international markets.</p>
             <div className="gq-map-footer">
               <a 
