@@ -37,7 +37,14 @@ export const About: React.FC = () => {
             
             {/* Left Column: Text & Credibility */}
             <div className="about-story__content">
-              <span className="section-subtitle">Who We Are</span>
+              
+              {/* Premium Heading Eyebrow */}
+              <div className="section-eyebrow">
+                <span className="eyebrow-dot" />
+                <span className="section-subtitle">Who We Are</span>
+                <span className="eyebrow-line" />
+              </div>
+
               <h2 className="section-title">
                 Bridging Continents with <span className="text-gradient">Uncompromising Precision</span>
               </h2>

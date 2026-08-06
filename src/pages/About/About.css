@@ -16,15 +16,72 @@
   overflow-x: hidden;
 }
 
-/* Common Typography Helper */
+/* ==================================================
+   BEAUTIFUL SECTION EYEBROW / HEADING BADGE
+================================================== */
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Animated Glowing Pulse Dot */
+.eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #0284c7;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(2, 132, 199, 0.8);
+  position: relative;
+}
+
+.eyebrow-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(2, 132, 199, 0.5);
+  animation: eyebrowPulse 2s infinite ease-in-out;
+}
+
+@keyframes eyebrowPulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Styled Subtitle Pill */
 .section-subtitle {
-  display: inline-block;
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 0.825rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--about-accent-blue);
-  margin-bottom: 12px;
+  letter-spacing: 2.5px;
+  color: #0284c7;
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.08) 0%, rgba(56, 189, 248, 0.15) 100%);
+  border: 1px solid rgba(2, 132, 199, 0.22);
+  padding: 8px 18px;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.08);
+  backdrop-filter: blur(8px);
+  margin-bottom: 0;
+}
+
+/* Elegant Fading Line */
+.eyebrow-line {
+  width: 45px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(2, 132, 199, 0.6) 0%, rgba(2, 132, 199, 0) 100%);
+  border-radius: 2px;
 }
 
 .section-title {
@@ -163,15 +220,10 @@
 }
 
 /* CONTAINED MULTI-IMAGE OVERLAY */
-/* ==================================================
-   FIXED MULTI-IMAGE CORNER OVERLAY (DESKTOP GRID)
-/* ==================================================
-   BULLETPROOF MULTI-IMAGE CORNER OVERLAY
-================================================== */
 .about-story__visuals {
   position: relative;
   width: 100%;
-  height: 420px; /* Explicit height prevents browser height collapse */
+  height: 420px;
   box-sizing: border-box;
 }
 
@@ -188,7 +240,7 @@
   display: block;
 }
 
-/* Primary Image (Sits in Top-Left, takes 82% width & 82% height) */
+/* Primary Image */
 .about-story__img-wrap--main {
   position: absolute;
   top: 0;
@@ -198,7 +250,7 @@
   z-index: 1;
 }
 
-/* Secondary Image (Pinned to Bottom-Right, neatly overlaps corner) */
+/* Secondary Image */
 .about-story__img-wrap--secondary {
   position: absolute;
   bottom: 0;
@@ -206,7 +258,7 @@
   width: 52%;
   height: 52%;
   z-index: 2;
-  border: 5px solid #ffffff; /* Clean white outline separation */
+  border: 5px solid #ffffff;
   background-color: #ffffff;
   box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2);
 }
@@ -238,31 +290,6 @@
 .about-story__badge span {
   font-size: 0.75rem;
   color: #38bdf8;
-}
-
-/* ==================================================
-   MOBILE STACKING (< 768px)
-================================================== */
-@media (max-width: 768px) {
-  .about-story__visuals {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .about-story__img-wrap--main {
-    position: relative;
-    width: 100%;
-    height: 280px;
-  }
-
-  .about-story__img-wrap--secondary {
-    position: relative;
-    width: 100%;
-    height: 220px;
-    border: none;
-  }
 }
 
 /* ==================================================
@@ -303,7 +330,7 @@
 }
 
 /* ==================================================
-   4. MISSION & VISION (Cinematic Background Overlay)
+   4. MISSION & VISION
 ================================================== */
 .about-vm {
   position: relative;
@@ -312,7 +339,6 @@
   color: #ffffff;
 }
 
-/* Subtle dark gradient overlay to make text pop effortlessly */
 .about-vm__overlay {
   position: absolute;
   inset: 0;
@@ -367,7 +393,6 @@
   gap: 32px;
 }
 
-/* Refined Frosted Glass Cards */
 .vm-card {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -383,7 +408,7 @@
 .vm-card:hover {
   border-color: rgba(56, 189, 248, 0.35);
   background: rgba(255, 255, 255, 0.07);
-  transform: translateY(-4px); /* Very subtle 4px lift */
+  transform: translateY(-4px);
 }
 
 .vm-card__header {
@@ -468,14 +493,17 @@
     flex-direction: column;
     gap: 20px;
     padding-bottom: 0;
+    height: auto;
   }
 
   .about-story__img-wrap--main {
+    position: relative;
     height: 280px;
     width: 100%;
   }
 
   .about-story__img-wrap--secondary {
+    position: relative;
     height: 220px;
     width: 100%;
     transform: none;
@@ -483,20 +511,11 @@
   }
 }
 
-/* About Story Section Styling */
+/* About Story Section Specific Overrides */
 .about-story .section-title {
-  color: #0f172a; /* Dark charcoal/navy for high contrast */
+  color: #0f172a;
   font-size: 2.25rem;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.2;
   margin-bottom: 1.25rem;
-}
-
-.about-story .section-subtitle {
-  color: #2563eb; /* Optional accent color for subtitle */
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  display: block;
-  margin-bottom: 0.5rem;
 }
