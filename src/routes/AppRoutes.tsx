@@ -5,7 +5,6 @@ import Layout from "../components/layout/Layout";
 import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
 import ProductPage from "../pages/Product/ProductPage";
-import ProductDetails from "../pages/ProductDetails";
 import WhyChooseUs from "../pages/WhyChooseUs/WhyChooseUs";
 import GetQuote from "../pages/GetQuote/GetQuote";
 import NotFound from "../pages/NotFound";
@@ -23,10 +22,6 @@ function AppRoutes() {
 
           <Route path="products" element={<ProductPage />} />
 
-          <Route
-            path="products/:productId"
-            element={<ProductDetails />}
-          />
 
           <Route path="contact" element={<GetQuote />} />
 
