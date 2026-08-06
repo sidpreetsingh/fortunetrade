@@ -7,7 +7,7 @@ import About from "../pages/About/About";
 import ProductPage from "../pages/Product/ProductPage";
 import ProductDetails from "../pages/ProductDetails";
 import WhyChooseUs from "../pages/WhyChooseUs/WhyChooseUs";
-import Contact from "../pages/Contact";
+import GetQuote from "../pages/GetQuote/GetQuote";
 import NotFound from "../pages/NotFound";
 
 function AppRoutes() {
@@ -28,7 +28,7 @@ function AppRoutes() {
             element={<ProductDetails />}
           />
 
-          <Route path="contact" element={<Contact />} />
+          <Route path="contact" element={<GetQuote />} />
 
           <Route path="quality" element={<WhyChooseUs />} />
 

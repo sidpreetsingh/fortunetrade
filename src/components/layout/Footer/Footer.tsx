@@ -56,8 +56,6 @@ export const Footer: React.FC = () => {
               <li><Link to="/about">About MR Fortune</Link></li>
               <li><Link to="/products">Product Portfolio</Link></li>
               <li><Link to="/quality">Quality Assurance</Link></li>
-              <li><Link to="/logistics">Global Logistics</Link></li>
-              <li><Link to="/contact">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -96,13 +94,7 @@ export const Footer: React.FC = () => {
           <p className="footer__copyright">
             © {currentYear} <strong>MR Fortune Trade Pvt. Ltd.</strong> All rights reserved.
           </p>
-          <div className="footer__legal">
-            <Link to="/privacy-policy">Privacy Policy</Link>
-            <span className="footer__divider">|</span>
-            <Link to="/terms-of-trade">Terms of Trade</Link>
-            <span className="footer__divider">|</span>
-            <Link to="/disclaimer">Export Compliance</Link>
-          </div>
+        
         </div>
       </div>
     </footer>

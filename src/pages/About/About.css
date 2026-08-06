@@ -482,3 +482,21 @@
     border: none;
   }
 }
+
+/* About Story Section Styling */
+.about-story .section-title {
+  color: #0f172a; /* Dark charcoal/navy for high contrast */
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+.about-story .section-subtitle {
+  color: #2563eb; /* Optional accent color for subtitle */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 0.5rem;
+}

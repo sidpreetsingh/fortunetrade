@@ -1,94 +1,190 @@
 /* =========================================
-   CSS VARIABLES - PREMIUM BLUE GRADIENT & INDUSTRIAL THEME
+   CSS VARIABLES - MATCHING ABOUT PAGE & THEME
    ========================================= */
 :root {
-  --primary-color: #0057B8;
-  --secondary-color: #0F172A;
-  --accent-color: #3B82F6;
-  --bg-dark: #070B19;
-  --bg-gradient-start: #0B132B;
-  --bg-gradient-mid: #1C2541;
-  --bg-gradient-end: #0B132B;
-  
-  --text-main: #FFFFFF;
-  --text-muted: #94A3B8;
+  --wcu-dark-bg: #070b19;
+  --wcu-accent-blue: #0284c7;
+  --wcu-accent-cyan: #38bdf8;
+  --wcu-text-main: #f8fafc;
+  --wcu-text-muted: #94a3b8;
   
   --glass-bg: rgba(15, 23, 42, 0.65);
   --glass-border: rgba(59, 130, 246, 0.25);
   --glass-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-  --glass-shadow-hover: 0 20px 60px rgba(0, 87, 184, 0.3);
-  
-  --blur-amount: 20px;
   --radius-lg: 24px;
-  --radius-md: 16px;
-  
   --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* =========================================
-   BASE STYLES & RICH GRADIENT BACKGROUND
-   ========================================= */
 .wcu-page {
   position: relative;
-  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%);
-  color: var(--text-main);
+  width: 100%;
+  background: linear-gradient(135deg, #0b132b 0%, #1c2541 50%, #0b132b 100%);
+  color: var(--wcu-text-main);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow-x: hidden;
-  padding-bottom: 8rem;
+  padding-bottom: 6rem;
+  margin: 0;
 }
 
 .wcu-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 24px;
   position: relative;
   z-index: 10;
 }
 
 .wcu-section {
-  padding-top: 8rem;
+  padding-top: 6rem;
 }
 
 .section-title {
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   font-weight: 800;
   text-align: center;
   margin-bottom: 3.5rem;
   letter-spacing: -0.02em;
-  color: #FFFFFF;
-  text-shadow: 0 2px 20px rgba(59, 130, 246, 0.3);
+  color: #ffffff;
+  text-shadow: 0 2px 20px rgba(56, 189, 248, 0.25);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==================================================
+   1. HERO SECTION (REFERENCE: ABOUT HERO ARCHITECTURE)
+================================================== */
+.wcu-hero {
+  position: relative;
+  width: 100%;
+  padding: 120px 24px 90px 24px;
+  background: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=2200&q=80') center/cover no-repeat;
+  color: #ffffff;
+}
+
+.wcu-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 11, 25, 0.94) 0%,
+    rgba(11, 19, 43, 0.88) 60%,
+    rgba(7, 11, 25, 0.98) 100%
+  );
+  z-index: 1;
+}
+
+.wcu-hero__container {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.wcu-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.wcu-hero__badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 30px;
+  color: var(--wcu-accent-cyan);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.wcu-hero__title {
+  font-size: 3.25rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 20px 0;
+  letter-spacing: -1px;
+}
+
+.wcu-hero__description {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+  margin-bottom: 32px;
+  max-width: 90%;
+}
+
+.wcu-hero__visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wcu-hero__logo-wrapper {
+  max-width: 420px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.4s ease;
+}
+
+.wcu-hero__logo-wrapper:hover {
+  transform: translateY(-6px);
+}
+
+.wcu-hero__logo-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 45px rgba(2, 132, 199, 0.35));
+}
+
+@media (min-width: 992px) {
+  .wcu-hero__grid {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
 }
 
 /* =========================================
-   LIGHT / WHITISH BACKGROUND SECTIONS UTILITY
+   2. LIGHT / WHITISH SECTIONS
+   ========================================= */
+/* =========================================
+   2. LIGHT / WHITISH SECTIONS
    ========================================= */
 .light-section {
-  background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
-  color: #0F172A;
-  padding: 6rem 0;
-  margin: 6rem 0;
-  border-top: 1px solid rgba(59, 130, 246, 0.15);
-  border-bottom: 1px solid rgba(59, 130, 246, 0.15);
-  box-shadow: inset 0 10px 30px rgba(0, 0, 0, 0.03);
   position: relative;
-  z-index: 10;
+  width: 100%;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  color: #0f172a;
+  padding: 6rem 0;
+  margin: 0; /* Changed from margin: 4rem 0 to remove the gap */
+  border-top: 1px solid rgba(56, 189, 248, 0.15);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.15);
 }
 
 .light-title {
-  color: #0F172A !important;
+  color: #0f172a !important;
   text-shadow: none !important;
 }
 
 .light-card {
-  background: #FFFFFF !important;
-  border: 1px solid rgba(59, 130, 246, 0.15) !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(56, 189, 248, 0.2) !important;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08) !important;
-  color: #0F172A !important;
+  color: #0f172a !important;
 }
 
 .light-card .adv-title,
 .light-card .trust-text {
-  color: #0F172A !important;
+  color: #0f172a !important;
 }
 
 .light-card .adv-desc {
@@ -96,28 +192,18 @@
 }
 
 /* =========================================
-   ENHANCED GLASSMORPHISM UTILITIES
+   3. GLASSMORPHISM & UTILITIES
    ========================================= */
 .glass-panel {
   background: var(--glass-bg);
-  backdrop-filter: blur(var(--blur-amount));
-  -webkit-backdrop-filter: blur(var(--blur-amount));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--glass-shadow);
   transition: var(--transition-smooth);
 }
 
-.glass-element {
-  background: rgba(30, 41, 59, 0.8);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-}
-
-/* =========================================
-   VIBRANT BUTTONS
-   ========================================= */
 .btn-primary, .btn-secondary {
   display: inline-flex;
   align-items: center;
@@ -129,41 +215,40 @@
   font-size: 1.05rem;
   text-decoration: none;
   transition: var(--transition-smooth);
-  border: none;
   cursor: pointer;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #0057B8 0%, #3B82F6 100%);
+  background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
   color: white;
-  box-shadow: 0 4px 25px rgba(0, 87, 184, 0.5);
+  box-shadow: 0 4px 25px rgba(2, 132, 199, 0.5);
+  border: none;
 }
 
 .btn-secondary {
   background: rgba(15, 23, 42, 0.6);
-  color: #FFFFFF;
-  border: 2px solid rgba(59, 130, 246, 0.5);
+  color: #ffffff;
+  border: 2px solid rgba(56, 189, 248, 0.5);
   backdrop-filter: blur(10px);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #1d4ed8 100%, #60a5fa 0%);
   transform: translateY(-3px);
-  box-shadow: 0 8px 35px rgba(59, 130, 246, 0.7);
+  box-shadow: 0 8px 35px rgba(56, 189, 248, 0.7);
 }
 
 .btn-secondary:hover {
-  background: rgba(59, 130, 246, 0.2);
-  border-color: #3B82F6;
+  background: rgba(56, 189, 248, 0.2);
+  border-color: #38bdf8;
   transform: translateY(-3px);
 }
 
 .glow-btn {
-  box-shadow: 0 0 30px rgba(0, 87, 184, 0.6);
+  box-shadow: 0 0 30px rgba(2, 132, 199, 0.6);
 }
 
 /* =========================================
-   DYNAMIC AMBIENT BACKGROUND BLOBS
+   4. AMBIENT BACKGROUND BLOBS
    ========================================= */
 .ambient-bg {
   position: absolute;
@@ -177,38 +262,16 @@
   position: absolute;
   border-radius: 50%;
   filter: blur(120px);
-  opacity: 0.5;
+  opacity: 0.4;
   animation: float 18s infinite alternate ease-in-out;
 }
 
-.blob-1 {
-  width: 700px;
-  height: 700px;
-  background: #0057B8;
-  top: -5%;
-  left: -10%;
-}
-
-.blob-2 {
-  width: 600px;
-  height: 600px;
-  background: #3B82F6;
-  top: 35%;
-  right: -10%;
-  animation-delay: -4s;
-}
-
-.blob-3 {
-  width: 800px;
-  height: 800px;
-  background: #1e3a8a;
-  bottom: 5%;
-  left: 15%;
-  animation-delay: -8s;
-}
+.blob-1 { width: 700px; height: 700px; background: #0284c7; top: -5%; left: -10%; }
+.blob-2 { width: 600px; height: 600px; background: #38bdf8; top: 35%; right: -10%; animation-delay: -4s; }
+.blob-3 { width: 800px; height: 800px; background: #075985; bottom: 5%; left: 15%; animation-delay: -8s; }
 
 /* =========================================
-   SCROLL REVEAL ANIMATIONS
+   5. SCROLL REVEAL ANIMATIONS
    ========================================= */
 .reveal {
   opacity: 0;
@@ -226,111 +289,7 @@
 }
 
 /* =========================================
-   1. HERO SECTION (Stretched Full-Width Horizontally)
-   ========================================= */
-.wcu-hero {
-  position: relative;
-  width: 100%;
-  padding: 7rem 0 5rem 0;
-  overflow: hidden;
-  
-  /* Background image spans across the entire hero section background directly */
-  background: 
-    linear-gradient(
-      110deg,
-      rgba(7, 11, 25, 0.92),
-      rgba(11, 19, 43, 0.82)
-    ),
-    url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=2200&q=80');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  
-  border-bottom: none;
-  border-radius: 0;
-  margin: 0;
-  z-index: 10;
-}
-
-.hero-grid-wrapper {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 5rem;
-  align-items: center;
-  background: none;
-  border: none;
-  box-shadow: none;
-  backdrop-filter: none;
-  position: relative;
-  z-index: 2;
-}
-
-.hero-title {
-  font-size: 4.25rem;
-  line-height: 1.1;
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.03em;
-  color: #FFFFFF;
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #0057B8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 15px rgba(59, 130, 246, 0.4));
-}
-
-.hero-subtitle {
-  font-size: 1.25rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 2.5rem;
-  max-width: 90%;
-}
-
-.btn-icon {
-  transition: transform 0.3s;
-}
-.btn-primary:hover .btn-icon {
-  transform: translateX(6px);
-}
-
-/* Hero Logo Image Container Style */
-.hero-logo-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  padding: 0;
-}
-
-.hero-logo-container:hover {
-  transform: translateY(-6px);
-}
-
-.hero-logo-img {
-  width: 100%;
-  max-width: 420px;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 18px 45px rgba(0, 87, 184, 0.35));
-  transition: transform 0.4s ease;
-}
-
-.hero-logo-img:hover {
-  transform: scale(1.04);
-}
-
-/* =========================================
-   2. OUR ADVANTAGES
+   6. ADVANTAGES GRID
    ========================================= */
 .advantages-grid {
   display: grid;
@@ -340,55 +299,30 @@
 
 .advantage-card {
   padding: 2.5rem;
-  position: relative;
-  overflow: hidden;
   border-radius: var(--radius-lg);
   transition: var(--transition-smooth);
 }
 
-.advantage-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.15), transparent 70%);
-  opacity: 0;
-  transition: opacity 0.4s;
-  pointer-events: none;
-}
-
 .advantage-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 87, 184, 0.15);
-  border-color: rgba(59, 130, 246, 0.4);
-}
-
-.advantage-card:hover::before {
-  opacity: 1;
+  box-shadow: 0 20px 40px rgba(2, 132, 199, 0.15);
 }
 
 .adv-icon {
-  font-size: 2.5rem;
-  color: #3b82f6;
+  font-size: 2.25rem;
+  color: #0284c7;
   margin-bottom: 1.5rem;
-  background: rgba(59, 130, 246, 0.12);
-  width: 70px; height: 70px;
+  background: rgba(2, 132, 199, 0.1);
+  width: 64px; height: 64px;
   display: flex; align-items: center; justify-content: center;
-  border-radius: 20px;
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  transition: var(--transition-smooth);
-}
-
-.advantage-card:hover .adv-icon {
-  background: linear-gradient(135deg, #0057B8, #3B82F6);
-  color: white;
-  transform: scale(1.08);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+  border-radius: 16px;
+  border: 1px solid rgba(2, 132, 199, 0.25);
 }
 
 .adv-title {
   font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .adv-desc {
@@ -396,179 +330,36 @@
 }
 
 /* =========================================
-   3. GLOBAL STANDARDS (Split Layout)
-   ========================================= */
-.split-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-}
-
-.split-visual {
-  min-height: 420px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  background-image: linear-gradient(135deg, rgba(11, 19, 43, 0.85), rgba(15, 23, 42, 0.9)),
-                    url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80');
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-}
-
-.illustration-placeholder {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.large-bg-icon {
-  font-size: 15rem;
-  color: rgba(59, 130, 246, 0.1);
-}
-
-.floating-badge {
-  position: absolute;
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(59, 130, 246, 0.4);
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-  color: #60a5fa;
-  animation: float 5s ease-in-out infinite alternate;
-}
-
-.badge-top { top: 20%; left: 10%; animation-delay: 0s; }
-.badge-bottom { bottom: 20%; right: 10%; animation-delay: -2s; }
-
-.split-content {
-  padding: 3.5rem;
-}
-
-.content-title {
-  font-size: 2.25rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #FFFFFF;
-}
-
-.content-desc {
-  color: var(--text-muted);
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-}
-
-.standards-list {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.standards-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-
-.standards-list strong {
-  color: #FFFFFF;
-}
-
-.li-icon {
-  color: #60a5fa;
-  font-size: 1.25rem;
-  margin-top: 3px;
-  flex-shrink: 0;
-}
-
-/* =========================================
-   4. NUMBERS THAT MATTER
+   7. STATS GRID
    ========================================= */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
 }
 
 .stat-card {
   padding: 3rem 1.5rem;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(59, 130, 246, 0.25);
-}
-
-.stat-card:hover {
-  border-color: rgba(59, 130, 246, 0.6);
-  box-shadow: 0 15px 40px rgba(0, 87, 184, 0.3);
-  transform: translateY(-5px);
 }
 
 .stat-number {
-  font-size: 3.5rem;
+  font-size: 3.25rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
-  line-height: 1;
-  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #ffffff 100%);
+  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 10px rgba(59, 130, 246, 0.4));
 }
 
 .stat-label {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--text-muted);
+  font-size: 1rem;
+  color: var(--wcu-text-muted);
 }
 
 /* =========================================
-   5. WHY BUYERS TRUST US
+   8. TRUST SECTION
    ========================================= */
-.trust-section {
-  position: relative;
-  overflow: hidden;
-  background:
-    linear-gradient(
-      rgba(248, 250, 252, 0.90),
-      rgba(248, 250, 252, 0.90)
-    ),
-    url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=2000&q=80');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.trust-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(0, 87, 184, 0.08), transparent 35%),
-    radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.08), transparent 40%);
-  pointer-events: none;
-}
-
-.trust-section .wcu-container {
-  position: relative;
-  z-index: 2;
-}
-
 .trust-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -586,86 +377,24 @@
 }
 
 .trust-card:hover {
-  border-left-color: #3B82F6;
+  border-left-color: #0284c7;
   transform: translateX(8px);
-  box-shadow: 0 10px 30px rgba(0, 87, 184, 0.12);
 }
 
 .trust-icon {
   font-size: 2rem;
-  color: #3b82f6;
+  color: #0284c7;
   flex-shrink: 0;
 }
 
 .trust-text {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 600;
   margin: 0;
 }
 
 /* =========================================
-   6. INTERACTIVE COMPARISON
-   ========================================= */
-.table-wrapper {
-  overflow-x: auto;
-  padding: 2rem;
-  border: 1px solid rgba(59, 130, 246, 0.25);
-}
-
-.comparison-table {
-  width: 100%;
-  min-width: 700px;
-  border-collapse: separate;
-  border-spacing: 0;
-  text-align: left;
-}
-
-.comparison-table th, .comparison-table td {
-  padding: 1.5rem;
-  border-bottom: 1px solid rgba(59, 130, 246, 0.15);
-}
-
-.comparison-table th {
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: #FFFFFF;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.comparison-table tbody tr {
-  transition: background-color 0.3s;
-}
-
-.comparison-table tbody tr:hover {
-  background-color: rgba(59, 130, 246, 0.08);
-}
-
-.feature-cell {
-  font-weight: 600;
-  color: #FFFFFF;
-}
-
-.highlight-col {
-  background: rgba(0, 87, 184, 0.2);
-  color: #60a5fa;
-  font-weight: 600;
-  border-left: 1px solid rgba(59, 130, 246, 0.3);
-  border-right: 1px solid rgba(59, 130, 246, 0.3);
-}
-
-.check-icon {
-  margin-right: 8px;
-  vertical-align: middle;
-  color: #60a5fa;
-}
-
-.others-col {
-  color: var(--text-muted);
-}
-
-/* =========================================
-   7. CERTIFICATES & COMPLIANCE
+   9. CERTIFICATES GRID
    ========================================= */
 .certificates-grid {
   display: grid;
@@ -682,30 +411,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(59, 130, 246, 0.25);
-}
-
-.cert-front {
-  transition: var(--transition-smooth);
 }
 
 .cert-icon {
   font-size: 3rem;
-  color: #60a5fa;
+  color: #38bdf8;
   margin-bottom: 1rem;
-  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
 }
 
 .cert-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .cert-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0, 87, 184, 0.95), rgba(15, 23, 42, 0.95));
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.95), rgba(15, 23, 42, 0.95));
   color: white;
   display: flex;
   align-items: center;
@@ -726,57 +449,40 @@
   font-size: 1.05rem;
   line-height: 1.5;
   font-weight: 500;
-  color: #FFFFFF;
 }
 
 /* =========================================
-   8. FINAL CTA WITH BACKGROUND PHOTO & GRADIENT
+   10. FINAL CTA SECTION
    ========================================= */
 .cta-section {
-  padding-bottom: 8rem;
+  padding-bottom: 6rem;
 }
 
 .cta-glass {
   position: relative;
-  padding: 6rem 3rem;
+  padding: 5rem 2rem;
   text-align: center;
   overflow: hidden;
-  border-radius: 32px;
   background-image: linear-gradient(135deg, rgba(7, 11, 25, 0.9), rgba(11, 19, 43, 0.85)),
                     url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=2000&q=80');
   background-size: cover;
   background-position: center;
-  border: 1px solid rgba(59, 130, 246, 0.4);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
 }
 
 .cta-bg-elements {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
 }
 
 .bg-globe {
   position: absolute;
   right: -5%;
   top: -20%;
-  font-size: 40rem;
-  color: rgba(59, 130, 246, 0.05);
+  font-size: 35rem;
+  color: rgba(56, 189, 248, 0.04);
   animation: rotate 60s linear infinite;
 }
-
-.glowing-particle {
-  position: absolute;
-  width: 10px; height: 10px;
-  background: #60a5fa;
-  border-radius: 50%;
-  box-shadow: 0 0 25px 12px rgba(59, 130, 246, 0.6);
-  animation: float 4s ease-in-out infinite alternate;
-}
-.p1 { top: 20%; left: 15%; }
-.p2 { bottom: 30%; right: 25%; animation-delay: -1s; }
-.p3 { top: 70%; left: 35%; animation-delay: -2s; }
 
 .cta-content {
   position: relative;
@@ -786,29 +492,26 @@
 }
 
 .cta-content h2 {
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   font-weight: 800;
-  margin-bottom: 1.5rem;
-  color: #FFFFFF;
-  text-shadow: 0 2px 20px rgba(59, 130, 246, 0.4);
+  margin-bottom: 1.25rem;
+  color: #ffffff;
 }
 
 .cta-content p {
-  font-size: 1.2rem;
-  color: var(--text-muted);
+  font-size: 1.15rem;
+  color: var(--wcu-text-muted);
   line-height: 1.6;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .cta-actions {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
-/* =========================================
-   KEYFRAME ANIMATIONS
-   ========================================= */
+/* ANIMATIONS */
 @keyframes float {
   0% { transform: translate(0, 0); }
   100% { transform: translate(15px, -15px); }
@@ -819,90 +522,31 @@
   100% { transform: rotate(360deg); }
 }
 
-/* =========================================
-   RESPONSIVE DESIGN (Tablets & Phones)
-   ========================================= */
-@media (max-width: 1024px) {
-  .wcu-hero {
-    text-align: center;
-    padding: 6rem 0 4rem 0;
-  }
-
-  .hero-grid-wrapper {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .hero-visual {
-    order: -1;
-    margin-bottom: 1rem;
-  }
-
-  .hero-logo-container {
-    max-width: 520px;
-  }
-
-  .hero-subtitle {
-    margin: 0 auto 2.5rem auto;
-  }
-
-  .split-layout {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
+/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
-  .wcu-section {
-    padding-top: 5rem;
-  }
-  
-  .hero-title {
-    font-size: 2.75rem;
-  }
-  
-  .cta-content h2 {
-    font-size: 2rem;
+  .wcu-hero__title {
+    font-size: 2.5rem;
   }
   
   .cta-actions {
     flex-direction: column;
   }
-  
-  .split-content {
-    padding: 2rem 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .hero-title {
-    font-size: 2.2rem;
-  }
-
-  .hero-logo-container {
-    max-width: 340px;
-  }
-  
-  .stat-number {
-    font-size: 3rem;
-  }
 }
 
 /* =========================================
-   REDUCE EXTRA TOP SPACING
-========================================= */
-.velvex-edge-section {
-  padding-top: 4rem !important;
+   7. STATS GRID & SECTION
+   ========================================= */
+.stats-section {
+  padding-bottom: 6rem; /* Adds equal spacing below the grid */
 }
 
-.stats-section {
-  padding-top: 4rem !important;
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.stat-card {
+  padding: 3rem 1.5rem;
+  text-align: center;
 }

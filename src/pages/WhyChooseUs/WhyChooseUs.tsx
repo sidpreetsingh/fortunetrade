@@ -2,11 +2,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router';
 import { 
   FiShield, FiDroplet, FiTruck, FiPackage, FiDollarSign, 
-  FiHeadphones, FiCheckCircle, FiGlobe, FiTarget, FiAward,
+  FiHeadphones, FiGlobe, FiTarget, FiAward,
   FiArrowRight 
 } from 'react-icons/fi';
 import './WhyChooseUs.css';
-import logo from "../../assets/icons/ChatGPT Image May 30, 2026, 01_29_56 PM (1).png"
+import logo from "../../assets/icons/ChatGPT Image May 30, 2026, 01_29_56 PM (1).png";
 
 // --- DATA ARRAYS ---
 
@@ -33,15 +33,6 @@ const TRUST_STATEMENTS = [
   'Transparent Communication',
   'Timely Deliveries',
   'Professional Export Support'
-];
-
-const COMPARISON_DATA = [
-  { feature: 'ISO Standard', velvex: 'Strictly Maintained', others: 'Varies by Supplier' },
-  { feature: 'Purity', velvex: 'Automotive Grade', others: 'Standard Grade' },
-  { feature: 'Packaging', velvex: 'IBC, Drums, Flexitanks', others: 'Limited Options' },
-  { feature: 'Export Documentation', velvex: 'Comprehensive & Fast', others: 'Basic / Delayed' },
-  { feature: 'Bulk Availability', velvex: 'High Capacity', others: 'Fluctuating' },
-  { feature: 'Customer Support', velvex: '24/7 Dedicated', others: 'General Support' }
 ];
 
 const CERTIFICATES = [
@@ -121,42 +112,52 @@ export default function WhyChooseUs() {
 
   return (
     <main className="wcu-page">
-      {/* Ambient Animated Background Blob Layer */}
+      {/* Ambient Background Blob Layer */}
       <div className="ambient-bg" aria-hidden="true">
         <div className="blob blob-1"></div>
         <div className="blob blob-2"></div>
         <div className="blob blob-3"></div>
       </div>
 
-      {/* SECTION 1: HERO (Full-width background wrapper with internal grid container) */}
+      {/* SECTION 1: HERO (Structured exactly like About Hero) */}
       <section className="wcu-hero reveal">
-        <div className="wcu-container hero-grid-wrapper">
-          <div className="hero-content">
-            <h1 className="hero-title">
-              Why Choose
-              <br />
-              <span className="gradient-text">MR FORTUNE TRADE?</span>
-            </h1>
-            <p className="hero-subtitle">
-              Trusted by businesses looking for reliable AdBlue® export solutions built on quality, consistency, and global standards.
-            </p>
-            <Link to="/quote" className="btn-primary glow-btn">
-              Request a Quote <FiArrowRight className="btn-icon" />
-            </Link>
-          </div>
-          
-          {/* Hero Logo Visual Container (reorders to top on mobile/tablets via CSS) */}
-          <div className="hero-visual hero-logo-container">
-            <img 
-              src={logo}
-              alt="Velvex Logo" 
-              className="hero-logo-img" 
-            />
+        <div className="wcu-hero__overlay" />
+        <div className="wcu-hero__container">
+          <div className="wcu-hero__grid">
+            
+            {/* Hero Left Content */}
+            <div className="wcu-hero__content">
+              <span className="wcu-hero__badge">Global Export Leader</span>
+              <h1 className="wcu-hero__title">
+                Why Choose <br />
+                <span className="text-gradient">MR FORTUNE TRADE?</span>
+              </h1>
+              <p className="wcu-hero__description">
+                Trusted by international businesses seeking reliable AdBlue® (DEF) supply chains engineered on chemical purity, ISO certification, and logistics excellence.
+              </p>
+              <div className="wcu-hero__actions">
+                <Link to="/quote" className="btn-primary glow-btn">
+                  Request a Quote <FiArrowRight className="btn-icon" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Hero Right Visual */}
+            <div className="wcu-hero__visual">
+              <div className="wcu-hero__logo-wrapper">
+                <img 
+                  src={logo}
+                  alt="MR Fortune Trade / Velvex Logo" 
+                  className="wcu-hero__logo-img" 
+                />
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* SECTION 2: OUR ADVANTAGES (Light/Whitish Background Section) */}
+      {/* SECTION 2: OUR ADVANTAGES */}
       <section className="wcu-section light-section">
         <div className="wcu-container">
           <h2 className="section-title light-title reveal">Our Advantages</h2>
@@ -176,11 +177,8 @@ export default function WhyChooseUs() {
         </div>
       </section>
 
-      {/* SECTION 3: GLOBAL STANDARDS */}
-      
-
-      {/* SECTION 4: NUMBERS THAT MATTER */}
-      <section className="wcu-container">
+      {/* SECTION 3: NUMBERS THAT MATTER */}
+      <section className="wcu-container wcu-section stats-section">
         <h2 className="section-title reveal">Numbers That Matter</h2>
         <div className="stats-grid reveal">
           {STATS.map((stat, idx) => (
@@ -189,7 +187,7 @@ export default function WhyChooseUs() {
         </div>
       </section>
 
-      {/* SECTION 5: WHY BUYERS TRUST US (Light/Whitish Background Section) */}
+      {/* SECTION 4: WHY BUYERS TRUST US */}
       <section className="wcu-section light-section trust-section">
         <div className="wcu-container">
           <h2 className="section-title light-title reveal">Why Buyers Trust Us</h2>
@@ -204,33 +202,8 @@ export default function WhyChooseUs() {
         </div>
       </section>
 
-      {/* SECTION 6: INTERACTIVE COMPARISON */}
-      <section className="wcu-container">
-        <h2 className="section-title reveal">The VELVEX Edge</h2>
-        <div className="table-wrapper glass-panel reveal">
-          <table className="comparison-table">
-            <thead>
-              <tr>
-                <th>Feature</th>
-                <th className="highlight-col">VELVEX AdBlue®</th>
-                <th>Other Suppliers</th>
-              </tr>
-            </thead>
-            <tbody>
-              {COMPARISON_DATA.map((row, idx) => (
-                <tr key={idx}>
-                  <td className="feature-cell">{row.feature}</td>
-                  <td className="highlight-col"><FiCheckCircle className="check-icon"/> {row.velvex}</td>
-                  <td className="others-col">{row.others}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      {/* SECTION 7: CERTIFICATES & COMPLIANCE */}
-      <section className="wcu-section wcu-container">
+      {/* SECTION 5: CERTIFICATES & COMPLIANCE */}
+      <section className="wcu-container wcu-section">
         <h2 className="section-title reveal">Certificates & Compliance</h2>
         <div className="certificates-grid">
           {CERTIFICATES.map((cert, idx) => (
@@ -247,7 +220,7 @@ export default function WhyChooseUs() {
         </div>
       </section>
 
-      {/* SECTION 8: FINAL CTA */}
+      {/* SECTION 6: FINAL CTA */}
       <section className="wcu-section wcu-container cta-section reveal">
         <div className="cta-glass glass-panel">
           <div className="cta-bg-elements">
@@ -260,7 +233,7 @@ export default function WhyChooseUs() {
             <h2>Partner with a Trusted Global AdBlue® Supplier</h2>
             <p>
               Whether you're a distributor, fleet operator, industrial buyer, or international importer, 
-              VELVEX delivers premium AdBlue® backed by consistent quality and dependable export services.
+              MR Fortune Trade delivers premium AdBlue® backed by consistent quality and dependable export services.
             </p>
             <div className="cta-actions">
               <Link to="/quote" className="btn-primary glow-btn">Request a Quote</Link>
@@ -269,6 +242,7 @@ export default function WhyChooseUs() {
           </div>
         </div>
       </section>
+
     </main>
   );
 }

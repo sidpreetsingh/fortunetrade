@@ -1,9 +1,9 @@
-import  { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   FiCheckCircle, 
   FiShield, 
   FiArrowRight, 
-  
   FiChevronLeft,
   FiChevronRight,
   FiFileText,
@@ -97,7 +97,6 @@ const APPLICATIONS = [
   'Industrial Diesel Equipments'
 ];
 
-// FIXED: Direct variable reference instead of object wrapping
 const GALLERY = [img1, img2, img3, img4];
 
 export default function ProductPage() {
@@ -159,9 +158,9 @@ export default function ProductPage() {
             </p>
             
             <div className="v-hero-actions">
-              <button className="v-btn v-btn-primary">
+              <Link to="/contact" className="v-btn v-btn-primary">
                 Get a Quote <FiArrowRight />
-              </button>
+              </Link>
             </div>
             
             <div className="v-hero-mini-features">
@@ -301,19 +300,18 @@ export default function ProductPage() {
         </section>
 
         {/* GALLERY SECTION */}
-        {/* GALLERY SECTION */}
-<section className="v-gallery-section reveal-on-scroll">
-  <div className="v-glass-panel v-gallery-panel">
-    <h3 className="v-section-heading">PRODUCT GALLERY</h3>
-    <div className="v-gallery-grid">
-      {GALLERY.map((img, i) => (
-        <div key={i} className="v-gallery-img-wrap">
-          <img src={img} alt={`Gallery item ${i + 1}`} loading="lazy" />
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
+        <section className="v-gallery-section reveal-on-scroll">
+          <div className="v-glass-panel v-gallery-panel">
+            <h3 className="v-section-heading">PRODUCT GALLERY</h3>
+            <div className="v-gallery-grid">
+              {GALLERY.map((img, i) => (
+                <div key={i} className="v-gallery-img-wrap">
+                  <img src={img} alt={`Gallery item ${i + 1}`} loading="lazy" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* FINAL CTA SECTION */}
         <section className="v-cta-section reveal-on-scroll">
@@ -328,9 +326,9 @@ export default function ProductPage() {
                 <p>We provide reliable supply, competitive pricing and global delivery.</p>
               </div>
             </div>
-            <button className="v-btn v-btn-yellow">
+            <Link to="/contact" className="v-btn v-btn-yellow">
               Get a Quote Now <FiArrowRight />
-            </button>
+            </Link>
           </div>
         </section>
         

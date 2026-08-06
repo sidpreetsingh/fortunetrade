@@ -17,7 +17,6 @@ const NAV_LINKS: NavItem[] = [
   { path: '/about', label: 'About Us' },
   { path: '/products', label: 'Product' },
   { path: '/quality', label: 'Why Choose Us' },
-  { path: '/contact', label: 'Contact' },
 ];
 
 export function Navbar() {
@@ -122,7 +121,7 @@ export function Navbar() {
 
           {/* Desktop CTA */}
           <div className="navbar__desktop-cta">
-            <Link to="/quote" className="btn-primary">
+            <Link to="/contact" className="btn-primary">
               Get a Quote
             </Link>
           </div>

@@ -130,7 +130,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 0.5rem;
+  text-decoration: none !important; /* Removes default link underline */
   padding: 0.85rem 1.8rem;
   border-radius: 8px;
   font-weight: 600;
@@ -155,6 +156,12 @@
 .v-btn-outline:hover {
   background-color: rgba(255, 255, 255, 0.05);
   border-color: rgba(255, 255, 255, 0.6);
+}
+.v-btn:hover,
+.v-btn:focus,
+.v-btn:active,
+.v-btn:visited {
+  text-decoration: none !important;
 }
 
 /* Mini Features (Hero Bottom) */

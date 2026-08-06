@@ -87,7 +87,7 @@ export const Home: React.FC = () => {
             </div>
 
             <div className="home-adblue__actions">
-              <Link to="/quote" className="btn-adblue-primary">
+              <Link to="/contact" className="btn-adblue-primary">
                 <span>Request AdBlue Quote</span>
                 <FiArrowRight size={18} />
               </Link>
@@ -168,7 +168,7 @@ export const Home: React.FC = () => {
             </p>
           </div>
           <div className="home-cta__action">
-            <Link to="/quote" className="home-cta__btn">
+            <Link to="/contact" className="home-cta__btn">
               <span>Get a Trade Quote</span>
               <FiArrowRight size={18} />
             </Link>

@@ -2,13 +2,10 @@
 import React from 'react';
 import { 
   FiGlobe, 
-   
   FiCheckCircle,
-  
-  
 } from 'react-icons/fi';
 import './About.css';
-import img1 from "../../assets/images/Nov-11-top-pic-5-steps-for-building-customer-trust.jpg"
+import img1 from "../../assets/images/Nov-11-top-pic-5-steps-for-building-customer-trust.jpg";
 
 export const About: React.FC = () => {
   return (
@@ -42,7 +39,7 @@ export const About: React.FC = () => {
             <div className="about-story__content">
               <span className="section-subtitle">Who We Are</span>
               <h2 className="section-title">
-                Bridging Continents with Uncompromising Precision
+                Bridging Continents with <span className="text-gradient">Uncompromising Precision</span>
               </h2>
               <p className="about-story__p">
                 Founded with a relentless commitment to trade excellence, <strong>MR Fortune Trade Pvt. Ltd.</strong> has rapidly emerged as a cornerstone in cross-border commodity export and chemical supply solutions. Headquartered in India with dedicated operations extending into the Middle East, we simplify international commerce through direct producer relationships, Tier-1 pricing models, and end-to-end logistics mastery.
@@ -142,7 +139,6 @@ export const About: React.FC = () => {
             {/* Mission Card */}
             <div className="vm-card">
               <div className="vm-card__header">
-                
                 <span className="vm-card__label">OUR MISSION</span>
               </div>
               <h3 className="vm-card__heading">Accelerating Global Trade Integrity</h3>
@@ -154,7 +150,6 @@ export const About: React.FC = () => {
             {/* Vision Card */}
             <div className="vm-card">
               <div className="vm-card__header">
-        
                 <span className="vm-card__label">OUR VISION</span>
               </div>
               <h3 className="vm-card__heading">Connecting Markets Seamlessly</h3>

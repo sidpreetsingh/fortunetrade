@@ -59,7 +59,7 @@ export const Hero: React.FC = () => {
 
             {/* Action CTAs */}
             <div className="hero__actions">
-              <Link to="/quote" className="btn-hero-primary">
+              <Link to="/contact" className="btn-hero-primary">
                 <span>Request Export Quote</span>
                 <FiArrowRight size={18} />
               </Link>
