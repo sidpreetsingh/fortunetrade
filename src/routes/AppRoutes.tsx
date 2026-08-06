@@ -4,10 +4,10 @@ import Layout from "../components/layout/Layout";
 
 import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
-import Products from "../pages/Products";
+import ProductPage from "../pages/Product/ProductPage";
 import ProductDetails from "../pages/ProductDetails";
+import WhyChooseUs from "../pages/WhyChooseUs/WhyChooseUs";
 import Contact from "../pages/Contact";
-import Quality from "../pages/Quality";
 import NotFound from "../pages/NotFound";
 
 function AppRoutes() {
@@ -21,7 +21,7 @@ function AppRoutes() {
 
           <Route path="about" element={<About />} />
 
-          <Route path="products" element={<Products />} />
+          <Route path="products" element={<ProductPage />} />
 
           <Route
             path="products/:productId"
@@ -30,7 +30,7 @@ function AppRoutes() {
 
           <Route path="contact" element={<Contact />} />
 
-          <Route path="quality" element={<Quality />} />
+          <Route path="quality" element={<WhyChooseUs />} />
 
         </Route>
 

@@ -1,11 +1,10 @@
 // src/components/layout/Navbar/Navbar.tsx
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router';
 import { FiMenu, FiX } from 'react-icons/fi';
 import './Navbar.css';
 
 // Import logo asset from your assets folder
-// (Adjust extension .png / .svg / .webp to match your actual file)
 import brandLogo from '../../../assets/icons/ChatGPT Image May 30, 2026, 01_29_56 PM (1).png';
 
 interface NavItem {
@@ -15,8 +14,8 @@ interface NavItem {
 
 const NAV_LINKS: NavItem[] = [
   { path: '/', label: 'Home' },
-  { path: '/about', label: 'About' },
-  { path: '/products', label: 'Products' },
+  { path: '/about', label: 'About Us' },
+  { path: '/products', label: 'Product' },
   { path: '/quality', label: 'Why Choose Us' },
   { path: '/contact', label: 'Contact' },
 ];
@@ -25,10 +24,10 @@ export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Handle Scroll to shrink Navbar
+  // Handle Scroll to apply solid backdrop when scrolling down
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 40) {
+      if (window.scrollY > 20) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -36,7 +35,6 @@ export function Navbar() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    // Trigger initially in case page loads scrolled down
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
@@ -70,14 +68,12 @@ export function Navbar() {
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
-      // Optional: Prevent layout jitter on desktop if scrollbars hide
       document.body.style.touchAction = 'none'; 
     } else {
       document.body.style.overflow = '';
       document.body.style.touchAction = '';
     }
 
-    // Cleanup when component unmounts
     return () => {
       document.body.style.overflow = '';
       document.body.style.touchAction = '';
@@ -101,7 +97,7 @@ export function Navbar() {
           <Link to="/" className="navbar__logo" onClick={closeMenu}>
             <img
               src={brandLogo}
-              alt="MR Fortune Trade Pvt. Ltd."
+              alt="Brand Logo"
               className="navbar__logo-img"
             />
           </Link>
@@ -138,7 +134,7 @@ export function Navbar() {
             aria-expanded={isMenuOpen}
             aria-label="Toggle navigation menu"
           >
-            <FiMenu size={28} />
+            <FiMenu size={26} />
           </button>
         </div>
       </header>
@@ -160,7 +156,7 @@ export function Navbar() {
           <Link to="/" className="navbar__logo" onClick={closeMenu}>
             <img
               src={brandLogo}
-              alt="MR Fortune Trade Pvt. Ltd."
+              alt="Brand Logo"
               className="navbar__logo-img"
             />
           </Link>
@@ -169,7 +165,7 @@ export function Navbar() {
             onClick={closeMenu}
             aria-label="Close navigation menu"
           >
-            <FiX size={28} />
+            <FiX size={26} />
           </button>
         </div>
 
