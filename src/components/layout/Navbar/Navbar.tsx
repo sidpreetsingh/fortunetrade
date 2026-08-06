@@ -187,7 +187,7 @@ export function Navbar() {
         </nav>
 
         <div className="drawer__footer">
-          <Link to="/quote" className="btn-primary btn-primary--large" onClick={closeMenu}>
+          <Link to="/desktop" className="btn-primary btn-primary--large" onClick={closeMenu}>
             Get a Quote
           </Link>
         </div>
