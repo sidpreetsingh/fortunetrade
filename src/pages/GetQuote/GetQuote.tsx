@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion} from 'framer-motion';
 import type { Variants } from 'framer-motion';
 
 import { 
@@ -7,12 +7,11 @@ import {
   FiPhone, 
   FiClock, 
   FiArrowRight, 
-  FiChevronDown, 
+  
   FiFileText, 
   FiHeadphones, 
   FiGlobe,
-  FiSend,
-  FiExternalLink
+  FiSend
 } from 'react-icons/fi';
 import { HiOutlineBuildingOffice2, HiOutlineDocumentCheck } from 'react-icons/hi2';
 import './GetQuote.css';
@@ -38,36 +37,14 @@ const staggerContainer: Variants = {
   }
 };
 
-interface FAQItem {
-  question: string;
-  answer: string;
-}
 
-const faqData: FAQItem[] = [
-  {
-    question: "Do you export internationally?",
-    answer: "Yes, Mr Fortune Trade exports AdBlue® (DEF) and industrial chemical products worldwide. We manage complete international shipping logistics, customs documentation, and compliance across global markets."
-  },
-  {
-    question: "What is the minimum order quantity (MOQ)?",
-    answer: "Our standard minimum order quantity for international shipments is a 20-foot full container load (FCL) packaged in 1000L IBC totes or 210L drums. For domestic bulk orders, custom quantities can be arranged upon discussion."
-  },
-  {
-    question: "Can you provide private labeling and OEM packaging?",
-    answer: "Yes, we offer specialized private labeling services for global buyers. We can manufacture and package under your custom brand name adhering strictly to ISO 22241 quality standards and customized design specs."
-  },
-  {
-    question: "What are your standard delivery timelines?",
-    answer: "Domestic dispatches within India are processed within 2 to 4 business days. For international exports, transit times range from 10 to 25 days depending on the destination sea port and custom clearances."
-  }
-];
+
+  
 
 export const GetQuote: React.FC = () => {
-  const [activeFaq, setActiveFaq] = useState<number | null>(0);
+  
 
-  const toggleFaq = (index: number) => {
-    setActiveFaq(activeFaq === index ? null : index);
-  };
+  
 
   return (
     <div className="gq-page">
@@ -195,46 +172,7 @@ export const GetQuote: React.FC = () => {
       {/* =========================================
          3. INTERACTIVE LOCATION
          ========================================= */}
-      <section className="gq-container gq-section">
-        <motion.div 
-          className="gq-glass-card gq-map-container"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-        >
-          {/* Real Google Map Embed Container */}
-          <div className="gq-map-graphic">
-            <iframe
-              title="HQ Google Map Location"
-              src="https://maps.google.com/maps?q=84%2F1%20Curzon%20Road%2C%20HNS%20Shastri%20Nagar%2C%20Kanpur%2C%20Uttar%20Pradesh%20208005&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen={true}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-
-          <div className="gq-map-details">
-            
-            <h3>HQ Location</h3>
-            <p>Serving clients seamlessly across India and major international markets.</p>
-            <div className="gq-map-footer">
-              <a 
-                href="https://maps.google.com/?q=84/1+Curzon+Road,+HNS+Shastri+Nagar,+Kanpur,+Uttar+Pradesh+208005" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="gq-map-link"
-              >
-                Open HQ Map Location <FiExternalLink />
-              </a>
-            </div>
-          </div>
-        </motion.div>
-      </section>
-
+      
       {/* =========================================
          4. QUICK CONTACT OPTIONS (No Form)
          ========================================= */}
@@ -326,61 +264,7 @@ export const GetQuote: React.FC = () => {
       {/* =========================================
          5. FREQUENTLY ASKED QUESTIONS
          ========================================= */}
-      <section className="gq-container gq-section">
-        <motion.div 
-          className="gq-section-header"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-        >
-          <span className="gq-subheading">Inquiries & Answers</span>
-          <h2 className="gq-section-title">Frequently Asked Questions</h2>
-        </motion.div>
-
-        <motion.div 
-          className="gq-faq-wrapper"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-        >
-          {faqData.map((faq, index) => {
-            const isOpen = activeFaq === index;
-            return (
-              <div 
-                key={index} 
-                className={`gq-glass-card gq-faq-item ${isOpen ? 'active' : ''}`}
-                onClick={() => toggleFaq(index)}
-              >
-                <div className="gq-faq-header">
-                  <h4>{faq.question}</h4>
-                  <motion.div 
-                    className="gq-faq-icon"
-                    animate={{ rotate: isOpen ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <FiChevronDown />
-                  </motion.div>
-                </div>
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.div 
-                      className="gq-faq-body"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease: "easeInOut" }}
-                    >
-                      <p>{faq.answer}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
-        </motion.div>
-      </section>
+      
 
       {/* =========================================
          6. FINAL CALL TO ACTION
