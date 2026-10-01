@@ -15,14 +15,13 @@ import {
   
 } from 'react-icons/fi';
 import './Home.css';
-import adBlueImage from '../../assets/images/Group-Shot.png';
+import adBlueImage from '../../assets/images/Premium Navy AdBlue Product Showcase Background Removed.png';
 
 export const Home: React.FC = () => {
   return (
     <div className="home-page">
       {/* Hero Section */}
       <Hero />
-
       {/* Featured Product Section: High-Purity AdBlue® / AUS 32 */}
       <section className="home-adblue">
         <div className="home-adblue__container">

@@ -11,7 +11,7 @@ import {
 import './Hero.css';
 
 // Import brand logo from assets
-import brandLogo from '../../../assets/icons/ChatGPT Image May 30, 2026, 01_29_56 PM (1).png';
+import brandLogo from '../../../assets/images/ChatGPT Image Aug 24, 2026, 06_21_12 PM.png';
 
 export const Hero: React.FC = () => {
   return (

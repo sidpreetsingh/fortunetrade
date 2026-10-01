@@ -5,7 +5,7 @@ import { FiMenu, FiX } from 'react-icons/fi';
 import './Navbar.css';
 
 // Import logo asset from your assets folder
-import brandLogo from '../../../assets/icons/ChatGPT Image May 30, 2026, 01_29_56 PM (1).png';
+import brandLogo from '../../../assets/images/ChatGPT Image Aug 24, 2026, 06_21_12 PM.png';
 
 interface NavItem {
   path: string;

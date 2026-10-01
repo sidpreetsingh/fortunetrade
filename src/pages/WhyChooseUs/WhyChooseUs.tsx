@@ -6,7 +6,7 @@ import {
   FiArrowRight 
 } from 'react-icons/fi';
 import './WhyChooseUs.css';
-import logo from "../../assets/icons/ChatGPT Image May 30, 2026, 01_29_56 PM (1).png";
+import logo from "../../assets/images/ChatGPT Image Aug 24, 2026, 06_21_12 PM.png";
 
 // --- DATA ARRAYS ---
 

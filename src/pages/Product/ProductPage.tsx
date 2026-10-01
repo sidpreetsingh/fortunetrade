@@ -12,12 +12,12 @@ import {
   FiFeather
 } from 'react-icons/fi';
 import './ProductPage.css';
-import adBlue from "../../assets/images/adblue2.png";
+import adBlue from "../../assets/images/image1 Background Removed.png";
 import illustration from "../../assets/images/undraw_delivery-truck_mjui.svg";
-import img1 from "../../assets/images/adblue2.png";
-import img2 from "../../assets/images/61-3PjcTyL Background Removed._SX466_.png";
-import img3 from "../../assets/images/Group-Shot.png";
-import img4 from "../../assets/images/old-Adblue-ADS-2025-2-1.png";
+import img1 from "../../assets/images/image2 Background Removed Background Removed Background Removed.png";
+import img2 from "../../assets/images/image4 Background Removed.png";
+import img3 from "../../assets/images/image1 Background Removed.png";
+import img4 from "../../assets/images/Premium Navy AdBlue Product Showcase Background Removed.png";
 
 // --- DATA ARRAYS ---
 const HERO_FEATURES = [
@@ -145,7 +145,7 @@ export default function ProductPage() {
             </div>
             
             <h1 className="v-hero-title">
-              VELVEX <br />
+              MR <br />
               <span className="text-gradient">AdBlue<sup className="reg-mark">®</sup></span>
             </h1>
             
@@ -190,9 +190,9 @@ export default function ProductPage() {
         
         {/* ABOUT SECTION */}
         <section className="v-about-section reveal-on-scroll">
-          <h3 className="v-section-heading">ABOUT VELVEX ADBLUE</h3>
+          <h3 className="v-section-heading">ABOUT MR ADBLUE</h3>
           <p className="v-about-text">
-            VELVEX AdBlue® is a high-purity Diesel Exhaust Fluid manufactured from 32.5% automotive-grade urea and 67.5% demineralized water in accordance with ISO 22241. It is designed for SCR-equipped diesel engines to reduce nitrogen oxide (NOx) emissions and support BS-VI / Euro VI compliance.
+            MR AdBlue® is a high-purity Diesel Exhaust Fluid manufactured from 32.5% automotive-grade urea and 67.5% demineralized water in accordance with ISO 22241. It is designed for SCR-equipped diesel engines to reduce nitrogen oxide (NOx) emissions and support BS-VI / Euro VI compliance.
           </p>
         </section>
 
